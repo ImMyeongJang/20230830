@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event3</title>
+    <script>
+        function send(){
+            //[1]
+            event.preventDefault();//기본동작 방식을 막는다=> href 동작을 막는다
+            document.bgColor='yellow';
+            document.fgColor='red';
+        }
+
+        function send2(){
+            document.bgColor='lime';
+            document.fgColor='blue';
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>이벤트 3</h1>
+    
+    <a href="http://www.google.com" onclick="send()">링크1</a>
+    <!--a의 기본동작: onclick동작후> href 동작함 -->
+    <hr>
+
+    <a href="http://www.google.com" onclick="return send2()">링크2</a>
+    <!--onclick에서 false가 반환되면 href 가 동작하지 않는다 -->
+</body>
+</html>
